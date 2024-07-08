@@ -10,13 +10,27 @@
 </head>
 
 <body>
-    <ul>
-        @foreach ($movies as $movie)
-            <li>
-                {{ $movie['title']}}
-            </li>
-        @endforeach
-    </ul>
+
+    <h1 class="text-center my-5">Movies collection</h1>
+
+    <div class="container my-5">
+        <div class="row g-5">
+            @foreach ($movies as $movie)
+                <div class="col-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $movie['title'] }}</h5>
+                            <p class="card-text">Original title: {{ $movie['original_title'] }}</p>
+                            <p class="card-text">Nationality: {{ $movie['nationality'] }}</p>
+                            <p class="card-text">Date: {{ $movie['date'] }}</p>
+                            <p class="card-text">Vote: {{ $movie['vote'] }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    
 </body>
 
 </html>
